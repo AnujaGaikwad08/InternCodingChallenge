@@ -9,5 +9,8 @@ router.post('/', authenticateJWT, authorizeRoles('admin'), storeController.addSt
 router.get('/', authenticateJWT, authorizeRoles('admin', 'user', 'owner'), storeController.getStores);
 // Owner: view ratings for their store
 router.get('/:storeId/ratings', authenticateJWT, authorizeRoles('owner'), storeController.getStoreRatings);
+// Add this route for store owner dashboard
+router.get('/store-owner/dashboard', authenticateJWT, authorizeRoles('owner'), storeController.ownerDashboard);
+router.put('/store-owner/update-password', authenticateJWT, authorizeRoles('owner'), storeController.ownerUpdatePassword);
 
 module.exports = router; 

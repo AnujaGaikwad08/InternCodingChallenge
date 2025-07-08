@@ -21,6 +21,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/stores', storeRoutes);
+app.use('/api/store-owner', storeRoutes);
 app.use('/api/ratings', ratingRoutes);
 
 // Sync DB
